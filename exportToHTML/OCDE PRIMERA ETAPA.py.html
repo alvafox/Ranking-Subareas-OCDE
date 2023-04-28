@@ -1,0 +1,174 @@
+<html>
+<head>
+<title>OCDE PRIMERA ETAPA.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #cfd2d5;}
+.s2 { color: #cc7832;}
+.s3 { color: #8ea765;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#232425">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+OCDE PRIMERA ETAPA.py</font>
+</center></td></tr></table>
+<pre><span class="s0">#=================================================================================================================</span>
+<span class="s0">#=============================================Cálculo de RNK OCDE=================================================</span>
+<span class="s2">import </span><span class="s1">pandas </span><span class="s2">as </span><span class="s1">pd</span>
+<span class="s0">#https://stackoverflow.com/questions/30635145/create-multiple-dataframes-in-loop</span>
+<span class="s0">#===========================================COMITES===============================================================</span>
+<span class="s3">&quot;101 Matemáticas&quot;</span>
+<span class="s3">&quot;102 Computación y Ciencias de la informática&quot;</span>
+<span class="s3">&quot;103 Ciencias Físicas y Astronomía&quot;</span>
+<span class="s3">&quot;104 Ciencias Químicas&quot;</span>
+<span class="s3">&quot;105 Ciencias de la Tierra y Medioambientales&quot;</span>
+<span class="s3">&quot;106 Ciencias Biológicas&quot;</span>
+<span class="s3">&quot;107 Otras Ciencias Naturales&quot;</span>
+<span class="s3">&quot;201 Ingeniería Civil&quot;</span>
+<span class="s3">&quot;202 Ingeniería Eléctrica y Electrónica&quot;</span>
+<span class="s3">&quot;203 Ingeniería Mecánica&quot;</span>
+<span class="s3">&quot;204 Ingeniería Química&quot;</span>
+<span class="s3">&quot;205 Ingeniería de Materiales&quot;</span>
+<span class="s3">&quot;206 Ingeniería Médica&quot;</span>
+<span class="s3">&quot;207 Ingeniería Medioambiental&quot;</span>
+<span class="s3">&quot;208 Biotecnología Medioambiental&quot;</span>
+<span class="s3">&quot;209 Biotecnología Industrial&quot;</span>
+<span class="s3">&quot;210 Nanotecnología&quot;</span>
+<span class="s3">&quot;211 Otras Ingenierías y Tecnologías&quot;</span>
+<span class="s3">&quot;301 Medicina Básica&quot;</span>
+<span class="s3">&quot;302 Medicina Clínica&quot;</span>
+<span class="s3">&quot;303 Ciencias de la Salud&quot;</span>
+<span class="s3">&quot;401 Agricultura, Silvicultura y Pesca&quot;</span>
+<span class="s3">&quot;402 Ciencias Animales y de la Leche&quot;</span>
+<span class="s3">&quot;403 Ciencias Veterinarias&quot;</span>
+<span class="s3">&quot;405 Otras Ciencias Agrícolas&quot;</span>
+<span class="s3">&quot;501 Psicología&quot;</span>
+<span class="s3">&quot;502 Economía y Negocios&quot;</span>
+<span class="s3">&quot;503 Ciencias de la Educación&quot;</span>
+<span class="s3">&quot;504 Sociología&quot;</span>
+<span class="s3">&quot;505 Leyes&quot;</span>
+<span class="s3">&quot;506 Ciencias Políticas&quot;</span>
+<span class="s3">&quot;507 Geografía Social y Económica&quot;</span>
+<span class="s3">&quot;508 Periodismo y Comunicaciones&quot;</span>
+<span class="s3">&quot;509 Otras Ciencias Sociales&quot;</span>
+<span class="s3">&quot;601 Historia y Arqueología&quot;</span>
+<span class="s3">&quot;602 Idiomas y Literatura&quot;</span>
+<span class="s3">&quot;603 Filosofía, Ética y Religión&quot;</span>
+<span class="s3">&quot;604 Arte&quot;</span>
+
+<span class="s0"># INSTITUCIONES</span>
+<span class="s0"># Research Council (No Académica)</span>
+<span class="s0"># National Academy (No Académica)</span>
+<span class="s0"># Academic System (Ninguna)</span>
+<span class="s0"># Research Institute (No Académica)</span>
+<span class="s0"># Academic (Académica)</span>
+<span class="s0"># Government (No Académica)</span>
+<span class="s0"># Nonprofit (No Académica)</span>
+<span class="s0"># Health (No Académica)</span>
+<span class="s0"># Corporate (No Académica)</span>
+<span class="s0"># Partnership (No Académica)</span>
+<span class="s0"># Healthcare System (No Académica)</span>
+
+<span class="s0"># Del Academic System, hay que filtrar las siguientes Universidades 2021</span>
+<span class="s0"># Indian Institute of Technology System (IIT System)</span>
+<span class="s0"># University of the Philippines System</span>
+<span class="s0"># University of Quebec</span>
+<span class="s0"># University Town of Shenzhen</span>
+<span class="s0"># University of London</span>
+<span class="s0"># y TODAS las Academic System de USA / las restantes del NINGUNO, deben incorporarse como Académicas</span>
+<span class="s0"># De las no academicas, sacar todas las de Chile</span>
+
+<span class="s0">########################################################################################################################</span>
+<span class="s1">DEFINICIONES = pd.read_csv(</span><span class="s3">'Definiciones.csv'</span><span class="s2">, </span><span class="s1">sep=</span><span class="s3">&quot;;&quot;</span><span class="s2">, </span><span class="s1">encoding=</span><span class="s3">&quot;UTF-8&quot;</span><span class="s2">, </span><span class="s1">decimal=</span><span class="s3">','</span><span class="s1">)</span>
+<span class="s0">########################################################################################################################</span>
+
+<span class="s2">for </span><span class="s1">i </span><span class="s2">in </span><span class="s1">range(</span><span class="s4">0</span><span class="s2">, </span><span class="s4">39</span><span class="s1">):</span>
+        <span class="s1">df = pd.read_csv(</span><span class="s3">'INSUMOS/' </span><span class="s1">+ str(DEFINICIONES[</span><span class="s3">&quot;Nombre Descarga EXCEL&quot;</span><span class="s1">][i]) + </span><span class="s3">'.csv'</span><span class="s2">, </span><span class="s1">sep=</span><span class="s3">&quot;,&quot;</span><span class="s2">, </span><span class="s1">encoding=</span><span class="s3">&quot;UTF-8&quot;</span><span class="s2">, </span><span class="s1">decimal=</span><span class="s3">','</span><span class="s1">)</span>
+        <span class="s1">df[</span><span class="s3">'% Docs Cited'</span><span class="s1">] = df[</span><span class="s3">'% Docs Cited'</span><span class="s1">].astype(</span><span class="s3">'float64'</span><span class="s1">)</span>
+        <span class="s1">df[</span><span class="s3">'Category Normalized Citation Impact'</span><span class="s1">] = df[</span><span class="s3">'Category Normalized Citation Impact'</span><span class="s1">].astype(</span><span class="s3">'float64'</span><span class="s1">)</span>
+        <span class="s1">df[</span><span class="s3">&quot;Sub-área&quot;</span><span class="s1">] = DEFINICIONES[</span><span class="s3">&quot;COD SUBAREA&quot;</span><span class="s1">][i]</span>
+        <span class="s1">df.set_index(</span><span class="s3">&quot;Sub-área&quot;</span><span class="s2">, </span><span class="s1">inplace=</span><span class="s2">True</span><span class="s1">)</span>
+        <span class="s1">df = df.iloc[:-</span><span class="s4">10</span><span class="s1">]</span>
+        <span class="s1">df.to_csv(</span><span class="s3">&quot;PRODUCTOS/AJUSTES/&quot; </span><span class="s1">+ str(DEFINICIONES[</span><span class="s3">&quot;SUBAREA OCDE&quot;</span><span class="s1">][i]) + </span><span class="s3">'.csv'</span><span class="s2">, </span><span class="s1">sep=</span><span class="s3">';'</span><span class="s2">, </span><span class="s1">encoding=</span><span class="s3">'latin-1'</span><span class="s2">, </span><span class="s1">index=</span><span class="s2">True, </span><span class="s1">decimal=</span><span class="s3">','</span><span class="s1">)</span>
+        <span class="s1">exec(str(DEFINICIONES[</span><span class="s3">&quot;DF&quot;</span><span class="s1">][i] + </span><span class="s3">' = df'</span><span class="s1">.format(i)))</span>
+        <span class="s1">print(df.dtypes)</span>
+        <span class="s1">print(df)</span>
+
+<span class="s0">#==========================================================================================================================</span>
+<span class="s0">#===================================================TODOS JUNTOS===========================================================</span>
+<span class="s0">#==========================================================================================================================</span>
+
+<span class="s1">TODOS = [Matematicas</span><span class="s2">, </span><span class="s1">Computacion</span><span class="s2">, </span><span class="s1">Fisica</span><span class="s2">, </span><span class="s1">Quimica</span><span class="s2">, </span><span class="s1">Tierra</span><span class="s2">, </span><span class="s1">Biologicas</span><span class="s2">, </span><span class="s1">Otras_naturales</span><span class="s2">, </span><span class="s1">Civil</span><span class="s2">, </span><span class="s1">Electrica</span><span class="s2">, </span><span class="s1">Mecanica</span><span class="s2">,</span>
+        <span class="s1">Ing_Quimica</span><span class="s2">, </span><span class="s1">Ing_Materiales</span><span class="s2">, </span><span class="s1">Ing_Medica</span><span class="s2">, </span><span class="s1">Ing_Medioambiental</span><span class="s2">, </span><span class="s1">Biotec_Medioambiental</span><span class="s2">, </span><span class="s1">Biotec_Industrial</span><span class="s2">,</span>
+        <span class="s1">Nanotecnologia</span><span class="s2">, </span><span class="s1">Otras_Ingenierias</span><span class="s2">, </span><span class="s1">Medicina_Basica</span><span class="s2">, </span><span class="s1">Medicina_Clinica</span><span class="s2">, </span><span class="s1">Ciencias_Salud</span><span class="s2">, </span><span class="s1">Agricultura</span><span class="s2">, </span><span class="s1">Ciencias_Animales</span><span class="s2">,</span>
+        <span class="s1">Ciencias_Veterinarias</span><span class="s2">, </span><span class="s1">Otras_Agricolas</span><span class="s2">, </span><span class="s1">Psicologia</span><span class="s2">, </span><span class="s1">Economia</span><span class="s2">, </span><span class="s1">Educacion</span><span class="s2">, </span><span class="s1">Sociologia</span><span class="s2">, </span><span class="s1">Leyes</span><span class="s2">, </span><span class="s1">Ciencias_Politicas</span><span class="s2">,</span>
+        <span class="s1">Geografia</span><span class="s2">, </span><span class="s1">Periodismo</span><span class="s2">, </span><span class="s1">Otras_Sociales</span><span class="s2">, </span><span class="s1">Historia</span><span class="s2">, </span><span class="s1">Idiomas</span><span class="s2">, </span><span class="s1">Filosofia</span><span class="s2">, </span><span class="s1">Arte</span><span class="s2">, </span><span class="s1">Otras_Humanidades]</span>
+
+<span class="s1">print(TODOS)</span>
+
+<span class="s0">#=================================================EXPORTAR A CSV========================================================</span>
+
+<span class="s1">CONSOLIDADO = pd.concat(TODOS)</span>
+<span class="s1">CONSOLIDADO.to_csv(</span><span class="s3">&quot;PRODUCTOS/AJUSTES/CONSOLIDADO.csv&quot;</span><span class="s2">, </span><span class="s1">sep=</span><span class="s3">';'</span><span class="s2">, </span><span class="s1">encoding=</span><span class="s3">'latin-1'</span><span class="s2">, </span><span class="s1">index=</span><span class="s2">True, </span><span class="s1">decimal=</span><span class="s3">','</span><span class="s1">)</span>
+
+<span class="s0">#########################################Determinar Tipos de Ranking por Defecto########################################</span>
+<span class="s1">Tipo_Rnk_2021 = []</span>
+<span class="s1">Rnk_2021 = []</span>
+<span class="s2">for </span><span class="s1">index</span><span class="s2">, </span><span class="s1">row </span><span class="s2">in </span><span class="s1">CONSOLIDADO.iterrows():</span>
+        <span class="s2">if </span><span class="s1">row[</span><span class="s3">&quot;Organization Type&quot;</span><span class="s1">] != </span><span class="s3">&quot;Academic&quot; </span><span class="s2">and </span><span class="s1">row[</span><span class="s3">&quot;Organization Type&quot;</span><span class="s1">] != </span><span class="s3">&quot;Academic System&quot;</span><span class="s1">:</span>
+                <span class="s1">Tipo_Rnk_2021 = </span><span class="s3">&quot;2 - Ranking no Académico&quot;</span>
+        <span class="s2">elif </span><span class="s1">row[</span><span class="s3">&quot;Organization Type&quot;</span><span class="s1">] == </span><span class="s3">&quot;Academic System&quot;</span><span class="s1">:</span>
+                <span class="s1">Tipo_Rnk_2021 = </span><span class="s3">&quot;3 - Ninguno&quot;</span>
+        <span class="s2">elif </span><span class="s1">row[</span><span class="s3">&quot;Organization Type&quot;</span><span class="s1">] == </span><span class="s3">&quot;Academic&quot;</span><span class="s1">:</span>
+                <span class="s1">Tipo_Rnk_2021 = </span><span class="s3">&quot;1 - Ranking Académico&quot;</span>
+        <span class="s1">Rnk_2021.append(Tipo_Rnk_2021)</span>
+
+<span class="s1">CONSOLIDADO[</span><span class="s3">&quot;Tipo Ranking 2021 (Defecto)&quot;</span><span class="s1">] = Rnk_2021</span>
+
+<span class="s0">#########################################Determinar Tipos de Ranking DEFINITIVOS########################################</span>
+<span class="s1">rnk_2021_def = []</span>
+<span class="s1">Tipo_Rnk_2021_def = []</span>
+<span class="s2">for </span><span class="s1">index</span><span class="s2">, </span><span class="s1">row </span><span class="s2">in </span><span class="s1">CONSOLIDADO.iterrows():</span>
+        <span class="s2">if </span><span class="s1">row[</span><span class="s3">&quot;Tipo Ranking 2021 (Defecto)&quot;</span><span class="s1">] == </span><span class="s3">&quot;2 - Ranking no Académico&quot; </span><span class="s2">and </span><span class="s1">row[</span><span class="s3">&quot;Country or Region&quot;</span><span class="s1">] == </span><span class="s3">&quot;CHILE&quot;</span><span class="s1">:</span>
+                <span class="s1">rnk_2021_def = </span><span class="s3">&quot;3 - Ninguno&quot;</span>
+        <span class="s2">elif </span><span class="s1">row[</span><span class="s3">&quot;Name&quot;</span><span class="s1">] == </span><span class="s3">&quot;European Southern Observatory&quot;</span><span class="s1">:</span>
+                <span class="s1">rnk_2021_def = </span><span class="s3">&quot;3 - Ninguno&quot;</span>
+        <span class="s2">elif </span><span class="s1">row[</span><span class="s3">&quot;Tipo Ranking 2021 (Defecto)&quot;</span><span class="s1">] == </span><span class="s3">&quot;3 - Ninguno&quot; </span><span class="s2">and</span><span class="s1">\</span>
+                <span class="s1">row[</span><span class="s3">&quot;Country or Region&quot;</span><span class="s1">] != </span><span class="s3">&quot;USA&quot; </span><span class="s2">and</span><span class="s1">\</span>
+                <span class="s1">row[</span><span class="s3">&quot;Name&quot;</span><span class="s1">] != </span><span class="s3">&quot;Indian Institute of Technology System (IIT System)&quot; </span><span class="s2">and</span><span class="s1">\</span>
+                <span class="s1">row[</span><span class="s3">&quot;Name&quot;</span><span class="s1">] != </span><span class="s3">&quot;University of the Philippines System&quot; </span><span class="s2">and</span><span class="s1">\</span>
+                <span class="s1">row[</span><span class="s3">&quot;Name&quot;</span><span class="s1">] != </span><span class="s3">&quot;University of Quebec&quot; </span><span class="s2">and</span><span class="s1">\</span>
+                <span class="s1">row[</span><span class="s3">&quot;Name&quot;</span><span class="s1">] != </span><span class="s3">&quot;University Town of Shenzhen&quot; </span><span class="s2">and</span><span class="s1">\</span>
+                <span class="s1">row[</span><span class="s3">&quot;Name&quot;</span><span class="s1">] != </span><span class="s3">&quot;University of London&quot;</span><span class="s1">:</span>
+                <span class="s1">rnk_2021_def = </span><span class="s3">&quot;1 - Ranking Académico&quot;</span>
+        <span class="s2">else</span><span class="s1">:</span>
+                <span class="s1">rnk_2021_def = row[</span><span class="s3">&quot;Tipo Ranking 2021 (Defecto)&quot;</span><span class="s1">]</span>
+        <span class="s1">Tipo_Rnk_2021_def.append(rnk_2021_def)</span>
+
+<span class="s1">CONSOLIDADO[</span><span class="s3">&quot;Tipo Ranking 2021 (Definitivo)&quot;</span><span class="s1">] = Tipo_Rnk_2021_def</span>
+
+<span class="s0">##################################################AJUSTES A PAISES######################################################</span>
+<span class="s0">#Acá introducir correcciones a paises.</span>
+<span class="s1">CONSOLIDADO[</span><span class="s3">&quot;Country or Region&quot;</span><span class="s1">] = CONSOLIDADO[</span><span class="s3">&quot;Country or Region&quot;</span><span class="s1">].replace(</span><span class="s3">&quot;CHINA MAINLAND&quot;</span><span class="s2">,</span><span class="s3">&quot;CHINA&quot;</span><span class="s1">)</span>
+<span class="s1">CONSOLIDADO[</span><span class="s3">&quot;Country or Region&quot;</span><span class="s1">] = CONSOLIDADO[</span><span class="s3">&quot;Country or Region&quot;</span><span class="s1">].replace(</span><span class="s3">&quot;ENGLAND&quot;</span><span class="s2">,</span><span class="s3">&quot;UNITED KINGDOM&quot;</span><span class="s1">)</span>
+<span class="s1">CONSOLIDADO[</span><span class="s3">&quot;Country or Region&quot;</span><span class="s1">] = CONSOLIDADO[</span><span class="s3">&quot;Country or Region&quot;</span><span class="s1">].replace(</span><span class="s3">&quot;GERMANY (FED REP GER)&quot;</span><span class="s2">,</span><span class="s3">&quot;GERMANY&quot;</span><span class="s1">)</span>
+<span class="s1">CONSOLIDADO[</span><span class="s3">&quot;Country or Region&quot;</span><span class="s1">] = CONSOLIDADO[</span><span class="s3">&quot;Country or Region&quot;</span><span class="s1">].replace(</span><span class="s3">&quot;NORTHERN IRELAND&quot;</span><span class="s2">,</span><span class="s3">&quot;UNITED KINGDOM&quot;</span><span class="s1">)</span>
+<span class="s1">CONSOLIDADO[</span><span class="s3">&quot;Country or Region&quot;</span><span class="s1">] = CONSOLIDADO[</span><span class="s3">&quot;Country or Region&quot;</span><span class="s1">].replace(</span><span class="s3">&quot;SCOTLAND&quot;</span><span class="s2">,</span><span class="s3">&quot;UNITED KINGDOM&quot;</span><span class="s1">)</span>
+<span class="s1">CONSOLIDADO[</span><span class="s3">&quot;Country or Region&quot;</span><span class="s1">] = CONSOLIDADO[</span><span class="s3">&quot;Country or Region&quot;</span><span class="s1">].replace(</span><span class="s3">&quot;WALES&quot;</span><span class="s2">,</span><span class="s3">&quot;UNITED KINGDOM&quot;</span><span class="s1">)</span>
+
+<span class="s0">###################################################Exportar a CSV#######################################################</span>
+
+<span class="s1">CONSOLIDADO.to_csv(</span><span class="s3">&quot;PRODUCTOS/AJUSTES/CONSOLIDADO - TIPO RANKING 2021.csv&quot;</span><span class="s2">, </span><span class="s1">sep=</span><span class="s3">';'</span><span class="s2">, </span><span class="s1">encoding=</span><span class="s3">'latin-1'</span><span class="s2">, </span><span class="s1">index=</span><span class="s2">True, </span><span class="s1">decimal=</span><span class="s3">','</span><span class="s1">)</span>
+
+<span class="s0">########################################################################################################################</span>
+
+<span class="s1">print(</span><span class="s3">&quot;Proceso Finalizado&quot;</span><span class="s1">)</span>
+
+
+</pre>
+</body>
+</html>

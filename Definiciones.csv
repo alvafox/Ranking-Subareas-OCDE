@@ -1,0 +1,40 @@
+﻿SUBAREA OCDE;Nombre Descarga EXCEL;DF;COD SUBAREA
+1.01 Matemáticas;101 Matematicas;Matematicas;1.01
+1.02 Computación y Ciencias de la informática;102 Computacion;Computacion;1.02
+1.03 Ciencias Físicas y Astronomía;103 Fisica;Fisica;1.03
+1.04 Ciencias Químicas;104 Quimica;Quimica;1.04
+1.05 Ciencias de la Tierra y Medioambientales;105 Tierra;Tierra;1.05
+1.06 Ciencias Biológicas;106 Biologicas;Biologicas;1.06
+1.07 Otras Ciencias Naturales;107 Otras naturales;Otras_naturales;1.07
+2.01 Ingeniería Civil;201 Civil;Civil;2.01
+2.02 Ingeniería Eléctrica y Electrónica;202 Electrica;Electrica;2.02
+2.03 Ingeniería Mecánica;203 Mecanica;Mecanica;2.03
+2.04 Ingeniería Química;204 Ing Quimica;Ing_Quimica;2.04
+2.05 Ingeniería de Materiales;205 Ing Materiales;Ing_Materiales;2.05
+2.06 Ingeniería Médica;206 Ing Medica;Ing_Medica;2.06
+2.07 Ingeniería Medioambiental;207 Ing Medioambiental;Ing_Medioambiental;2.07
+2.08 Biotecnología Medioambiental;208 Biotec Medioambiental;Biotec_Medioambiental;2.08
+2.09 Biotecnología Industrial;209 Biotec Industrial;Biotec_Industrial;2.09
+2.10 Nanotecnología;210 Nanotecnologia;Nanotecnologia;2.10
+2.11 Otras Ingenierías y Tecnologías;211 Otras Ingenierias;Otras_Ingenierias;2.11
+3.01 Medicina Básica;301 Medicina Basica;Medicina_Basica;3.01
+3.02 Medicina Clínica;302 Medicina Clinica;Medicina_Clinica;3.02
+3.03 Ciencias de la Salud;303 Ciencias Salud;Ciencias_Salud;3.03
+4.01 Agricultura, Silvicultura y Pesca;401 Agricultura;Agricultura;4.01
+4.02 Ciencias Animales y de la Leche;402 Ciencias Animales;Ciencias_Animales;4.02
+4.03 Ciencias Veterinarias;403 Ciencias Veterinarias;Ciencias_Veterinarias;4.03
+4.05 Otras Ciencias Agrícolas;405 Otras Agricolas;Otras_Agricolas;4.05
+5.01 Psicología;501 Psicologia;Psicologia;5.01
+5.02 Economía y Negocios;502 Economia;Economia;5.02
+5.03 Ciencias de la Educación;503 Educacion;Educacion;5.03
+5.04 Sociología;504 Sociologia;Sociologia;5.04
+5.05 Leyes;505 Leyes;Leyes;5.05
+5.06 Ciencias Políticas;506 Ciencias Politicas;Ciencias_Politicas;5.06
+5.07 Geografía Social y Económica;507 Geografia;Geografia;5.07
+5.08 Periodismo y Comunicaciones;508 Periodismo;Periodismo;5.08
+5.09 Otras Ciencias Sociales;509 Otras Sociales;Otras_Sociales;5.09
+6.01 Historia y Arqueología;601 Historia;Historia;6.01
+6.02 Idiomas y Literatura;602 Idiomas;Idiomas;6.02
+6.03 Filosofía, Ética y Religión;603 Filosofia;Filosofia;6.03
+6.04 Arte;604 Arte;Arte;6.04
+6.05 Otras Humanidades;605 Otras Humanidades;Otras_Humanidades;6.05
