@@ -67,7 +67,7 @@ Los archivos deben ser descargados desde incites, mediante los siguientes "Nombr
 # **1 - Primera Etapa**
 ---
 
-Ejecutar el archivo Ranking OCDE Primera Etapa.py, ajustando previamente el siguiente ciclo para definir correctamente las rankings definitivos.
+Ejecutar el archivo Ranking OCDE Primera Etapa.py, ajustando previamente el siguiente ciclo para definir correctamente los rankings definitivos. Es importante revisar bien este ciclo, puesto que en la segunda etapa esta clasificacion es un insumo que determina a que ranking pertenece cada institución académica.
 
 ```
 ######################################### Determinar Tipos de Ranking DEFINITIVOS ########################################
