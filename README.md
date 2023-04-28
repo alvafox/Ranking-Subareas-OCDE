@@ -1,25 +1,9 @@
 # Ranking-Subareas-OCDE
 
-Las instituciones vienen clasificadas de la siguiente forma en la columna "INSTITUCIONES". Para el cálculo hay que asignarle una columna que las identifique correctamente, en orden de realizar la clasificación de cada institución. Esta clasificación corresponde a la columna "Tipo de Institución".
 
-|    | INSTITUCIONES      | Tipo de Institución   |
-|---:|:-------------------|:----------------------|
-|  0 | Research Council   | No Académica          |
-|  1 | National Academy   | No Académica          |
-|  2 | Academic System    | Ninguna               |
-|  3 | Research Institute | No Académica          |
-|  4 | Academic           | Académica             |
-|  5 | Government         | No Académica          |
-|  6 | Nonprofit          | No Académica          |
-|  7 | Health             | No Académica          |
-|  8 | Corporate          | No Académica          |
-|  9 | Partnership        | No Académica          |
-| 10 | Healthcare System  | No Académica          |
+Ranking por subáreas OCDE en dos etapas: (i) archivo de depuración y asignación de tipo ranking definitivo y (ii) cálculo de los índices y ordenamiento.
 
-
-Ranking por subáreas OCDE en dos etamas: (i) archivo de depuración y asignación de tipo ranking definitivo y (ii) cálculo de los índices y ordenamiento.
-
-Los archivos deben ser descargados desde incites, mediante los siguientes "Nombre Descarga EXCEL" en formato csv.
+Los archivos deben ser descargados desde incites, guardandolos con el "Nombre Descarga EXCEL" en formato csv.
 
 |    | SUBAREA OCDE                                  | Nombre Descarga EXCEL     | DF                    |   COD SUBAREA |
 |---:|:----------------------------------------------|:--------------------------|:----------------------|--------------:|
@@ -64,10 +48,29 @@ Los archivos deben ser descargados desde incites, mediante los siguientes "Nombr
 | 38 | 6.05 Otras Humanidades                        | 605 Otras Humanidades     | Otras_Humanidades     |          6.05 |
 
 
+
+
 # **1 - Primera Etapa**
 ---
 
-Ejecutar el archivo Ranking OCDE Primera Etapa.py, ajustando previamente el siguiente ciclo para definir correctamente los rankings definitivos. Es importante revisar bien este ciclo, puesto que en la segunda etapa esta clasificacion es un insumo que determina a que ranking pertenece cada institución académica.
+Ejecutar el archivo Ranking OCDE Primera Etapa.py. Las instituciones vienen clasificadas de la siguiente forma en la columna "INSTITUCIONES". Para el cálculo hay que asignarle una columna que las identifique correctamente, en orden de realizar la clasificación de cada institución. Esta clasificación corresponde a la columna "Tipo de Institución". 
+
+|    | INSTITUCIONES      | Tipo de Institución   |
+|---:|:-------------------|:----------------------|
+|  0 | Research Council   | No Académica          |
+|  1 | National Academy   | No Académica          |
+|  2 | Academic System    | Ninguna               |
+|  3 | Research Institute | No Académica          |
+|  4 | Academic           | Académica             |
+|  5 | Government         | No Académica          |
+|  6 | Nonprofit          | No Académica          |
+|  7 | Health             | No Académica          |
+|  8 | Corporate          | No Académica          |
+|  9 | Partnership        | No Académica          |
+| 10 | Healthcare System  | No Académica          |
+
+
+Se debe ajustar previamente el siguiente ciclo para definir correctamente los rankings definitivos. Es importante revisar bien este ciclo, puesto que en la segunda etapa esta clasificacion es un insumo que determina a que ranking pertenece cada institución académica.
 
 ```
 ######################################### Determinar Tipos de Ranking DEFINITIVOS ########################################
