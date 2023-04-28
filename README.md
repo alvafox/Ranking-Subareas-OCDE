@@ -101,7 +101,7 @@ for index, row in CONSOLIDADO.iterrows():
 CONSOLIDADO["Tipo Ranking 202X (Definitivo)"] = Tipo_Rnk_202X_def
 ```
 
-# ***2 - Segunda Etapa***
+# **2 - Segunda Etapa**
 ---
 
 Ejecutar el archivo Ranking OCDE Primera Etapa.py, que mediante iteraciones llevara a cabo la producción de todas las planillas independientes. Asimismo, también logrará la consolidación de toda la información en un excel que servirá para verificar la información.
