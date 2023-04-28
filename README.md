@@ -45,3 +45,46 @@ Los archivos deben ser descargados desde incites, mediante los siguientes "Nombr
 | 36 | 6.03 Filosofía, Ética y Religión              | 603 Filosofia             | Filosofia             |          6.03 |
 | 37 | 6.04 Arte                                     | 604 Arte                  | Arte                  |          6.04 |
 | 38 | 6.05 Otras Humanidades                        | 605 Otras Humanidades     | Otras_Humanidades     |          6.05 |
+
+
+# ***1 - Primera Etapa***
+---
+
+Ejecutar el archivo Ranking OCDE Primera Etapa.py, ajustando previamente el siguiente ciclo para definir correctamente las rankings definitivos.
+
+```
+######################################### Determinar Tipos de Ranking DEFINITIVOS ########################################
+rnk_202X_def = []
+Tipo_Rnk_202X_def = []
+for index, row in CONSOLIDADO.iterrows():
+        if row["Tipo Ranking 202X (Defecto)"] == "2 - Ranking no Académico" and row["Country or Region"] == "CHILE":
+                rnk_202X_def = "3 - Ninguno"
+        elif row["Name"] == "European Southern Observatory" or row["Name"] == 'University of Rizal System':
+                rnk_202X_def = "3 - Ninguno"
+        elif row["Name"] == 'Colombo North Teaching Hospital' or \
+                row["Name"] == 'Servicio Nacional de Aprendizaje' or \
+                row["Name"] == 'UERM Memorial Medical Center':
+                rnk_202X_def = "2 - Ranking no Académico"
+        elif row["Tipo Ranking 202X (Defecto)"] == "3 - Ninguno" and\
+                row["Country or Region"] != "USA" and\
+                row["Name"] != "Indian Institute of Technology System (IIT System)" and \
+                row["Name"] != "Indian Institute of Management (IIM System)" and \
+                row["Name"] != "National Institute of Technology (NIT System)" and \
+                row["Name"] != "University of the Philippines System" and\
+                row["Name"] != "University of Quebec" and\
+                row["Name"] != "University Town of Shenzhen" and \
+                row["Name"] != 'UDICE-French Research Universities' and \
+                row["Name"] != 'Mindanao State University System' and \
+                row["Name"] != "University of London":
+                rnk_202X_def = "1 - Ranking Académico"
+        else:
+                rnk_202X_def = row["Tipo Ranking 202X (Defecto)"]
+        Tipo_Rnk_202X_def.append(rnk_202X_def)
+
+CONSOLIDADO["Tipo Ranking 202X (Definitivo)"] = Tipo_Rnk_202X_def
+```
+
+# ***2 - Segunda Etapa***
+---
+
+Ejecutar el archivo Ranking OCDE Primera Etapa.py
