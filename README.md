@@ -1,5 +1,22 @@
 # Ranking-Subareas-OCDE
 
+Las instituciones vienen clasificadas de la siguiente forma en la columna "INSTITUCIONES". Para el cálculo hay que asignarle una columna que las identifique correctamente, en orden de realizar la clasificación de cada institución. Esta clasificación corresponde a la columna "Tipo de Institución".
+
+|    | INSTITUCIONES      | Tipo de Institución   |
+|---:|:-------------------|:----------------------|
+|  0 | Research Council   | No Académica          |
+|  1 | National Academy   | No Académica          |
+|  2 | Academic System    | Ninguna               |
+|  3 | Research Institute | No Académica          |
+|  4 | Academic           | Académica             |
+|  5 | Government         | No Académica          |
+|  6 | Nonprofit          | No Académica          |
+|  7 | Health             | No Académica          |
+|  8 | Corporate          | No Académica          |
+|  9 | Partnership        | No Académica          |
+| 10 | Healthcare System  | No Académica          |
+
+
 Ranking por subáreas OCDE en dos etamas: (i) archivo de depuración y asignación de tipo ranking definitivo y (ii) cálculo de los índices y ordenamiento.
 
 Los archivos deben ser descargados desde incites, mediante los siguientes "Nombre Descarga EXCEL" en formato csv.
