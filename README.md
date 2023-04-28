@@ -3,7 +3,7 @@
 
 Ranking por subáreas OCDE en dos etapas: (i) archivo de depuración y asignación de tipo ranking definitivo y (ii) cálculo de los índices y ordenamiento.
 
-Los archivos deben ser descargados desde incites, guardandolos con el "Nombre Descarga EXCEL" en formato csv.
+Los archivos deben ser descargados desde incites, guardándolos con el "Nombre Descarga EXCEL" en formato csv.
 
 |    | SUBAREA OCDE                                  | Nombre Descarga EXCEL     | DF                    |   COD SUBAREA |
 |---:|:----------------------------------------------|:--------------------------|:----------------------|--------------:|
