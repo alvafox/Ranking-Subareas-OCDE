@@ -51,7 +51,7 @@ Los archivos deben ser descargados desde incites, guardándolos con el "Nombre D
 
 
 # **1 - Primera Etapa**
----
+
 
 Ejecutar el archivo Ranking OCDE Primera Etapa.py. Las instituciones vienen clasificadas de la siguiente forma en la columna "INSTITUCIONES". Para el cálculo hay que asignarle una columna que las identifique correctamente, en orden de realizar la clasificación de cada institución. Esta clasificación corresponde a la columna "Tipo de Institución". El primer script hará este proceso, pero hay que editar el siguiente ciclo para que la clasificación sea la correcta. 
 
@@ -107,6 +107,6 @@ CONSOLIDADO["Tipo Ranking 202X (Definitivo)"] = Tipo_Rnk_202X_def
 ```
 
 # **2 - Segunda Etapa**
----
+
 
 Ejecutar el archivo Ranking OCDE Primera Etapa.py, que mediante iteraciones llevara a cabo la producción de todas las planillas independientes. Asimismo, también logrará la consolidación de toda la información en un excel que servirá para verificar la información.
