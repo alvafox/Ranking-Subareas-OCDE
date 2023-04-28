@@ -64,7 +64,7 @@ Los archivos deben ser descargados desde incites, mediante los siguientes "Nombr
 | 38 | 6.05 Otras Humanidades                        | 605 Otras Humanidades     | Otras_Humanidades     |          6.05 |
 
 
-# ***1 - Primera Etapa***
+# **1 - Primera Etapa**
 ---
 
 Ejecutar el archivo Ranking OCDE Primera Etapa.py, ajustando previamente el siguiente ciclo para definir correctamente las rankings definitivos.
