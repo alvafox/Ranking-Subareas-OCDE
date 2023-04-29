@@ -118,7 +118,7 @@ El script, al igual que el primero, usará un archivo llamado 'Definiciones.csv'
 DEFINICIONES = pd.read_csv('Definiciones.csv', sep=";", encoding="UTF-8", decimal=',')
 ```
 
-Notar que el script utilizará como insumo uno de los productos del primer script. En este archivo esta consolidada toda la información. 
+Notar que el script "Ranking OCDE Segunda Etapa.py" utilizará como insumo uno de los productos del script "Ranking OCDE Primera Etapa.py". En este archivo esta consolidada toda la información. 
 
 ```
 Consolidado_AC_NA = pd.read_csv("PRODUCTOS/AJUSTES/CONSOLIDADO - TIPO RANKING 202X.csv", sep=";", encoding="latin-1", decimal=',')
