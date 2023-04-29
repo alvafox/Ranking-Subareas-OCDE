@@ -62,7 +62,7 @@ if not os.path.exists("PRODUCTOS/RANKINGS/ACADEMICOS"):
 ########################################################################################################################
 DEFINICIONES = pd.read_csv('Definiciones.csv', sep=";", encoding="UTF-8", decimal=',')
 ########################################################################################################################
-Consolidado_AC_NA = pd.read_csv("PRODUCTOS/AJUSTES/CONSOLIDADO - TIPO RANKING 202X.csv", sep=";", encoding="latin-1", decimal=',')
+Consolidado_AC_NA = pd.read_csv("PRODUCTOS/RANKINGS/CONSOLIDADOS/CONSOLIDADO - TIPO RANKING 202X.csv", sep=";", encoding="latin-1", decimal=',')
 ########################################################################################################################
 
 ########################################################################################################################
