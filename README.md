@@ -73,7 +73,7 @@ La clasificación se que llevará a cabo está detallada mediante la columna "Ti
 | 10 | Healthcare System  | No Académica          |
 
 
-Es importante revisar bien este ciclo, puesto que en la segunda etapa esta clasificacion es un insumo que determina a que ranking pertenece cada institución académica. Hay que considerar que año a año aparecen nuevas instituciones que podrian no necesariamente ser académicas, por lo que hay que revisar los insumos. Este trabajo debe ser mediante cuidadosa revisión antes de pasar a ajecutar el script "Ranking OCDE Segunda Etapa.py". 
+Es importante revisar bien este ciclo, puesto que en la segunda etapa esta clasificacion es un insumo que determina a qué ranking pertenece cada institución académica. Hay que considerar que año a año aparecen nuevas instituciones que podrian no necesariamente ser académicas, por lo que hay que revisar los insumos. Este trabajo debe ser mediante cuidadosa revisión antes de pasar a ajecutar el script "Ranking OCDE Segunda Etapa.py". 
 
 ```
 ######################################### Determinar Tipos de Ranking DEFINITIVOS ########################################
