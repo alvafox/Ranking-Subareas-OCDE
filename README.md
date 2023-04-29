@@ -55,7 +55,7 @@ Los archivos deben ser descargados desde incites, guardándolos con el "Nombre D
 
 Ejecutar el archivo Ranking OCDE Primera Etapa.py. Las instituciones vienen clasificadas de la siguiente forma en la columna "INSTITUCIONES". Para el cálculo hay que asignarle una columna que las identifique correctamente, en orden de realizar la clasificación de cada institución. Esta clasificación corresponde a la columna "Tipo de Institución". El primer script hará este proceso, pero hay que editar el siguiente ciclo para que la clasificación sea la correcta. 
 
-Hay que considerar que año a año aparecen nuevas instituciones que podrian no ser académicas y no académicas, por lo que hay que revisar los insumos año a año. Este trabajo debe ser mediante cuidadosa revisión. 
+Hay que considerar que año a año aparecen nuevas instituciones que podrian no necesariamente ser académicas, por lo que hay que revisar los insumos año a año. Este trabajo debe ser mediante cuidadosa revisión antes de pasar a ajecutar el script "Ranking OCDE Segunda Etapa.py". 
 
 |    | INSTITUCIONES      | Tipo de Institución   |
 |---:|:-------------------|:----------------------|
