@@ -2,6 +2,7 @@
 # =================================================Cálculo de RNK OCDE===================================================
 # =======================================================================================================================
 import pandas as pd
+import os
 import decimal
 from decimal import Decimal as D
 context = decimal.getcontext()
@@ -48,7 +49,15 @@ context.rounding = decimal.ROUND_HALF_UP
 "6.04 Arte"
 "6.05 Otras Humanidades"
 
-#Importar el resultado de la Primera Etapa "CONSOLIDADO - TIPO RANKING 202X.csv"
+########################################################################################################################
+# Crear las carpetas si no existen
+if not os.path.exists("PRODUCTOS/RANKINGS/NO ACADEMICOS"):
+    os.makedirs("PRODUCTOS/RANKINGS/NO ACADEMICOS")
+
+if not os.path.exists("PRODUCTOS/RANKINGS/ACADEMICOS"):
+    os.makedirs("PRODUCTOS/RANKINGS/ACADEMICOS")
+########################################################################################################################
+# Importar el resultado de la Primera Etapa "CONSOLIDADO - TIPO RANKING 202X.csv"
 # Definiciones para nombres dinámicos
 ########################################################################################################################
 DEFINICIONES = pd.read_csv('Definiciones.csv', sep=";", encoding="UTF-8", decimal=',')
