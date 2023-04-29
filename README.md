@@ -53,9 +53,8 @@ Los archivos deben ser descargados desde incites, guardándolos con el "Nombre D
 # **1 - Primera Etapa**
 
 
-Posterior a la descarga y almacenamiento de los insumos en la carpeta "INSUMOS", ejecutar el script "Ranking OCDE Primera Etapa.py". Las instituciones vienen clasificadas de la siguiente forma en la columna "INSTITUCIONES". Para el cálculo hay que asignarle una columna que las identifique correctamente, en orden de realizar la clasificación de cada institución. Esta clasificación corresponde a la columna "Tipo de Institución". El primer script hará este proceso, pero hay que editar el siguiente ciclo para que la clasificación sea la correcta. 
+Posterior a la descarga y almacenamiento de los insumos en la carpeta "INSUMOS" hay que considerar que las instituciones vienen clasificadas por defecto mediante la etiqueta presente en la columna "INSTITUCIONES". Para el cálculo hay que crear una nueva columna que las identifique correctamente, para evitar que instituciones no académicas alteren el ranking definitivo que se publicará. La clasificación se que llevará a cabo está detallada mediante la columna "Tipo de Institución". El primer script "Ranking OCDE Primera Etapa.py" hará este proceso, pero hay que editar el siguiente ciclo para que la clasificación sea la correcta. 
 
-Hay que considerar que año a año aparecen nuevas instituciones que podrian no necesariamente ser académicas, por lo que hay que revisar los insumos año a año. Este trabajo debe ser mediante cuidadosa revisión antes de pasar a ajecutar el script "Ranking OCDE Segunda Etapa.py". 
 
 |    | INSTITUCIONES      | Tipo de Institución   |
 |---:|:-------------------|:----------------------|
@@ -72,7 +71,7 @@ Hay que considerar que año a año aparecen nuevas instituciones que podrian no 
 | 10 | Healthcare System  | No Académica          |
 
 
-Se debe ajustar previamente el siguiente ciclo para definir correctamente los rankings definitivos. Es importante revisar bien este ciclo, puesto que en la segunda etapa esta clasificacion es un insumo que determina a que ranking pertenece cada institución académica.
+Es importante revisar bien este ciclo, puesto que en la segunda etapa esta clasificacion es un insumo que determina a que ranking pertenece cada institución académica. Hay que considerar que año a año aparecen nuevas instituciones que podrian no necesariamente ser académicas, por lo que hay que revisar los insumos. Este trabajo debe ser mediante cuidadosa revisión antes de pasar a ajecutar el script "Ranking OCDE Segunda Etapa.py". 
 
 ```
 ######################################### Determinar Tipos de Ranking DEFINITIVOS ########################################
