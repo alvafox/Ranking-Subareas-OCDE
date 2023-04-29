@@ -53,7 +53,7 @@ Los archivos deben ser descargados desde incites, guardándolos con el "Nombre D
 # **1 - Primera Etapa**
 
 
-Posterior a la descarga y almacenamiento de los insumos en la carpeta "INSUMOS" hay que considerar que las instituciones vienen clasificadas por defecto mediante la etiqueta presente en la columna "INSTITUCIONES". Para el cálculo hay que crear una nueva columna que las identifique correctamente, para evitar que instituciones no académicas alteren el ranking definitivo que se publicará. La clasificación se que llevará a cabo está detallada mediante la columna "Tipo de Institución". El primer script "Ranking OCDE Primera Etapa.py" hará este proceso, pero hay que editar el siguiente ciclo para que la clasificación sea la correcta. 
+Posterior a la descarga y almacenamiento de los insumos en la carpeta "INSUMOS", se debe tener presente que las instituciones vienen clasificadas por defecto mediante la etiqueta presente en la columna "INSTITUCIONES". Para el cálculo hay que crear una nueva columna que las identifique correctamente, para evitar que instituciones no académicas alteren el ranking definitivo que se publicará. La clasificación se que llevará a cabo está detallada mediante la columna "Tipo de Institución". El primer script "Ranking OCDE Primera Etapa.py" hará este proceso, pero hay que editar el siguiente ciclo para que la clasificación sea la correcta. 
 
 
 |    | INSTITUCIONES      | Tipo de Institución   |
