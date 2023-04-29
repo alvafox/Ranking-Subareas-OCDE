@@ -111,3 +111,9 @@ CONSOLIDADO["Tipo Ranking 202X (Definitivo)"] = Tipo_Rnk_202X_def
 
 
 Ejecutar el archivo Ranking OCDE Segunda Etapa.py, que mediante iteraciones llevara a cabo la producción de todas las planillas independientes. Asimismo, también logrará la consolidación de toda la información en un excel que servirá para verificar la información.
+
+Notar que el script utilizará como insumo uno de los productos del primer script. En este archivo esta consolidada toda la información. 
+
+```
+Consolidado_AC_NA = pd.read_csv("PRODUCTOS/AJUSTES/CONSOLIDADO - TIPO RANKING 202X.csv", sep=";", encoding="latin-1", decimal=',')
+```
