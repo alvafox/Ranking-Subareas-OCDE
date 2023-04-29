@@ -66,6 +66,17 @@ import pandas as pd
 # De las no academicas, sacar todas las de Chile
 
 ########################################################################################################################
+# Crear las carpetas si no existen
+if not os.path.exists("PRODUCTOS/COMPROBACIONES"):
+    os.makedirs("PRODUCTOS/COMPROBACIONES")
+
+if not os.path.exists("PRODUCTOS/AJUSTES"):
+    os.makedirs("PRODUCTOS/AJUSTES")
+
+if not os.path.exists("PRODUCTOS/RANKINGS/CONSOLIDADOS/"):
+    os.makedirs("PRODUCTOS/RANKINGS/CONSOLIDADOS/")
+
+########################################################################################################################
 DEFINICIONES = pd.read_csv('Definiciones.csv', sep=";", encoding="UTF-8", decimal=',')
 ########################################################################################################################
 
