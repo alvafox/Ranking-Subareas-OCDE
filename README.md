@@ -112,6 +112,12 @@ CONSOLIDADO["Tipo Ranking 202X (Definitivo)"] = Tipo_Rnk_202X_def
 
 Ejecutar el archivo Ranking OCDE Segunda Etapa.py, que mediante iteraciones llevara a cabo la producción de todas las planillas independientes. Asimismo, también logrará la consolidación de toda la información en un excel que servirá para verificar la información.
 
+El script, al igual que el primero, usará un archivo llamado 'Definiciones.csv'. Este archivo contiene los nombres con los cuales se guardaron los insumos, contiene los nombres de los DataFrames y el nombre con el cual se exportarán los rankings definitivos de manera individual. 
+
+```
+DEFINICIONES = pd.read_csv('Definiciones.csv', sep=";", encoding="UTF-8", decimal=',')
+```
+
 Notar que el script utilizará como insumo uno de los productos del primer script. En este archivo esta consolidada toda la información. 
 
 ```
